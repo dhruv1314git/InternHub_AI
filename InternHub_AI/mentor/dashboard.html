@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentor Executive Command Center — InternHub AI</title>
+  
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Mentor Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../landing/index.html" class="brand-logo">
+          <div class="brand-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <span>InternHub <span class="text-gradient">AI</span></span>
+        </a>
+      </div>
+
+      <div class="sidebar-menu">
+        <div class="menu-label">Mentor Portal</div>
+        <a href="dashboard.html" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Executive Overview</span>
+        </a>
+        <a href="interns.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Intern Directory</span>
+        </a>
+        <a href="tasks.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>Task Management</span>
+        </a>
+        <a href="../student/settings.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Settings</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-summary">
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=250" alt="Dr. Sarah Jenkins" /></div>
+          <div class="user-info">
+            <span class="user-name">Dr. Sarah Jenkins</span>
+            <span class="user-role">Mentor Lead • Stripe</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      
+      <!-- Topbar Navbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="page-title">Mentor Executive Command Center</h1>
+        </div>
+        <div class="topbar-right">
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="Search interns, submissions..." />
+          </div>
+
+          <button class="btn btn-outline btn-sm" onclick="Toast.show({title:'Batch Report Exported', message:'Intern_Batch_2026_Report.csv downloaded.', type:'success'});">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export CSV Report
+          </button>
+          
+          <a href="tasks.html" class="btn btn-primary btn-sm">+ Assign New Task</a>
+        </div>
+      </header>
+
+      <!-- Content Body -->
+      <main class="content-body">
+        
+        <!-- Welcome Strip -->
+        <div style="margin-bottom:2rem; display:flex; justify-content:space-between; align-items:center;" class="animate-fade-in">
+          <div>
+            <h2 style="font-size:1.85rem; font-weight:700;">Cohort Overview — Summer 2026 Batch</h2>
+            <p style="color:var(--text-secondary);">32 Active Interns • AI Co-Mentor active with automated evaluation enabled.</p>
+          </div>
+        </div>
+
+        <!-- 4 Metric Cards -->
+        <div class="grid-4" style="margin-bottom:2rem;">
+          <div class="glass-card stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Active Interns</span>
+              <div class="stat-icon" style="color:var(--color-primary);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+            </div>
+            <div class="stat-value">32</div>
+            <div class="stat-footer"><span class="stat-trend-up">100% active</span> this week</div>
+          </div>
+
+          <div class="glass-card stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Pending Reviews</span>
+              <div class="stat-icon" style="color:var(--color-warning);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            </div>
+            <div class="stat-value" style="color:var(--color-warning);">7</div>
+            <div class="stat-footer"><span class="badge badge-warning">AI Pre-Audited</span></div>
+          </div>
+
+          <div class="glass-card stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Avg Cohort Score</span>
+              <div class="stat-icon" style="color:#4ADE80;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            </div>
+            <div class="stat-value" style="color:#4ADE80;">88.4<span style="font-size:1rem; color:var(--text-muted);">/100</span></div>
+            <div class="stat-footer"><span class="stat-trend-up">↑ 4.2%</span> vs last cohort</div>
+          </div>
+
+          <div class="glass-card stat-card">
+            <div class="stat-header">
+              <span class="stat-title">At-Risk Interns</span>
+              <div class="stat-icon" style="color:var(--color-danger);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+            </div>
+            <div class="stat-value" style="color:var(--color-danger);">2</div>
+            <div class="stat-footer"><span class="badge badge-danger">Needs Intervention</span></div>
+          </div>
+        </div>
+
+        <div class="grid-main-side">
+          
+          <!-- Left Column: Batch Health Chart & Pending Review Table -->
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            
+            <!-- Batch Progress Velocity SVG Chart -->
+            <div class="glass-card" style="padding:1.5rem;">
+              <h3 style="font-size:1.1rem; margin-bottom:1rem; display:flex; justify-content:space-between; align-items:center;">
+                <span>Cohort Velocity & Quality Score Curve</span>
+                <span style="font-size:0.8rem; color:var(--text-muted);">Weeks 1 to 7</span>
+              </h3>
+              <div id="batchHealthChart"></div>
+            </div>
+
+            <!-- Pending Code Reviews Data Table -->
+            <div class="glass-card" style="padding:1.5rem;">
+              <h3 style="font-size:1.1rem; margin-bottom:1rem; display:flex; justify-content:space-between; align-items:center;">
+                <span>Pending Code Submissions (AI Pre-Evaluated)</span>
+                <button class="btn btn-primary btn-sm" onclick="Toast.show({title:'Batch Approved', message:'Approved all 7 pending submissions in 1 click.', type:'success'});">1-Click Approve All</button>
+              </h3>
+
+              <div class="table-container">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Intern</th>
+                      <th>Task</th>
+                      <th>AI Score</th>
+                      <th>Submitted</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" style="width:32px; height:32px; border-radius:50%; object-fit:cover;" />
+                          <div>
+                            <strong style="font-size:0.85rem;">Sophia Chen</strong>
+                            <div style="font-size:0.75rem; color:var(--text-muted);">Backend Track</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td style="font-size:0.85rem;">Task #12: Redis Cache Engine</td>
+                      <td><span class="badge badge-success">94/100</span></td>
+                      <td style="font-size:0.85rem; color:var(--text-muted);">15m ago</td>
+                      <td>
+                        <div style="display:flex; gap:0.375rem;">
+                          <button class="btn btn-primary btn-sm" onclick="Toast.show({title:'Approved', message:'Sophia Chen submission approved.', type:'success'});">Approve</button>
+                          <button class="btn btn-outline btn-sm" onclick="Drawer.openStudentProfile('INT-101');">Inspect</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" style="width:32px; height:32px; border-radius:50%; object-fit:cover;" />
+                          <div>
+                            <strong style="font-size:0.85rem;">Marcus Vance</strong>
+                            <div style="font-size:0.75rem; color:var(--text-muted);">AI Track</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td style="font-size:0.85rem;">Task #14: Vector Search Pipeline</td>
+                      <td><span class="badge badge-success">96/100</span></td>
+                      <td style="font-size:0.85rem; color:var(--text-muted);">1h ago</td>
+                      <td>
+                        <div style="display:flex; gap:0.375rem;">
+                          <button class="btn btn-primary btn-sm" onclick="Toast.show({title:'Approved', message:'Marcus Vance submission approved.', type:'success'});">Approve</button>
+                          <button class="btn btn-outline btn-sm" onclick="Drawer.openStudentProfile('INT-102');">Inspect</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" style="width:32px; height:32px; border-radius:50%; object-fit:cover;" />
+                          <div>
+                            <strong style="font-size:0.85rem;">Elena Rostova</strong>
+                            <div style="font-size:0.75rem; color:var(--text-muted);">Frontend Track</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td style="font-size:0.85rem;">Task #07: State Management</td>
+                      <td><span class="badge badge-danger">71/100</span></td>
+                      <td style="font-size:0.85rem; color:var(--text-muted);">2d ago</td>
+                      <td>
+                        <div style="display:flex; gap:0.375rem;">
+                          <button class="btn btn-danger btn-sm" onclick="Toast.show({title:'Revision Requested', message:'Requested revisions from Elena Rostova.', type:'error'});">Request Fix</button>
+                          <button class="btn btn-outline btn-sm" onclick="Drawer.openStudentProfile('INT-103');">Inspect</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: At-Risk Warnings & AI Co-Mentor Insights -->
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            
+            <!-- At-Risk Intern Alerts -->
+            <div class="glass-card" style="padding:1.5rem; border-left:4px solid var(--color-danger);">
+              <h4 style="font-size:1rem; color:#F87171; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                At-Risk Intern Warnings
+              </h4>
+
+              <div style="display:flex; flex-direction:column; gap:0.875rem;">
+                <div style="background:var(--bg-surface); padding:0.875rem; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
+                    <strong style="font-size:0.875rem;">Elena Rostova</strong>
+                    <span class="badge badge-danger">High Risk</span>
+                  </div>
+                  <p style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:0.5rem;">Stalled velocity • 2 days since last commit on Task #07.</p>
+                  <button class="btn btn-outline btn-sm btn-full" onclick="Drawer.openStudentProfile('INT-103');">Open Diagnostic Drawer</button>
+                </div>
+
+                <div style="background:var(--bg-surface); padding:0.875rem; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
+                    <strong style="font-size:0.875rem;">Aaliyah Patel</strong>
+                    <span class="badge badge-warning">Medium Risk</span>
+                  </div>
+                  <p style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:0.5rem;">Low test coverage score (76/100) on SQL pooling module.</p>
+                  <button class="btn btn-outline btn-sm btn-full" onclick="Drawer.openStudentProfile('INT-105');">Open Diagnostic Drawer</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- AI Co-Mentor Assistant -->
+            <div class="glass-card" style="padding:1.5rem; border-left:3px solid var(--color-secondary);">
+              <h4 style="font-size:1rem; margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                AI Co-Mentor Smart Recommendation
+              </h4>
+              <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5; margin-bottom:1rem;">
+                "85% of interns struggle with async SQL parameterization in Week 4. Recommend broadcasting a 15-min live workshop template."
+              </p>
+              <button class="btn btn-secondary btn-sm btn-full" onclick="Toast.show({title:'Broadcast Sent', message:'Workshop link & study material sent to all 32 interns.', type:'success'});">Schedule Workshop Announcement</button>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+
+      <footer class="app-footer">
+        <span>© 2026 InternHub AI Platform. All rights reserved.</span>
+      </footer>
+    </div>
+  </div>
+
+  <script src="../assets/js/mock-data.js"></script>
+  <script src="../assets/js/components/modal.js"></script>
+  <script src="../assets/js/components/toast.js"></script>
+  <script src="../assets/js/components/drawer.js"></script>
+  <script src="../assets/js/components/chart.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Chart.renderLineChart('batchHealthChart', [62, 70, 78, 81, 85, 87, 88], ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7']);
+    });
+  </script>
+</body>
+</html>

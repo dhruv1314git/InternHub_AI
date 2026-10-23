@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile & Verified Credentials — InternHub AI</title>
+  
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../landing/index.html" class="brand-logo">
+          <div class="brand-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <span>InternHub <span class="text-gradient">AI</span></span>
+        </a>
+      </div>
+      <div class="sidebar-menu">
+        <a href="dashboard.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="task-details.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Current Tasks</span>
+        </a>
+        <a href="ai-feedback.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          <span>AI Feedback</span>
+        </a>
+        <a href="profile.html" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Profile & Badges</span>
+        </a>
+        <a href="settings.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Settings</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-summary">
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250" alt="Sophia Chen" /></div>
+          <div class="user-info">
+            <span class="user-name">Sophia Chen</span>
+            <span class="user-role">Intern • Backend Track</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="page-title">User Profile & Credentials</h1>
+        </div>
+        <div class="topbar-right">
+          <button class="btn btn-primary btn-sm" onclick="Toast.show({title:'Profile Saved', message:'All profile changes updated.', type:'success'});">Save Profile Changes</button>
+        </div>
+      </header>
+
+      <main class="content-body">
+        
+        <!-- Profile Banner Card -->
+        <div class="glass-card" style="padding:0; overflow:hidden; margin-bottom:2rem;" class="animate-fade-in">
+          <div style="height:140px; background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);"></div>
+          <div style="padding:1.5rem 2rem; position:relative; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
+            
+            <div style="display:flex; align-items:flex-end; gap:1.5rem; margin-top:-60px;">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250" alt="Sophia Chen" style="width:110px; height:110px; border-radius:50%; object-fit:cover; border:4px solid var(--bg-surface);" />
+              <div style="margin-bottom:0.5rem;">
+                <div style="display:flex; gap:0.5rem; align-items:center;">
+                  <h2 style="font-size:1.75rem; font-weight:800;">Sophia Chen</h2>
+                  <span class="badge badge-success">Verified Intern</span>
+                </div>
+                <p style="color:var(--text-secondary); margin-bottom:0.25rem;">Backend Engineering Intern @ Stripe / InternHub AI</p>
+                <div style="font-size:0.8rem; color:var(--text-muted);">Stanford University • Class of 2027</div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:0.75rem; margin-bottom:0.5rem;">
+              <button class="btn btn-outline btn-sm" data-modal-target="certModal">View Verified Certificate</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-main-side">
+          
+          <!-- Left Column: Personal Info & Activity Heatmap -->
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            
+            <!-- Personal Info Form -->
+            <div class="glass-card" style="padding:1.75rem;">
+              <h3 style="font-size:1.15rem; margin-bottom:1.25rem;">Personal Information</h3>
+              
+              <div class="grid-2">
+                <div class="form-group">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-input" value="Sophia Chen" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" class="form-input" value="sophia.chen@internhub.ai" readonly />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Short Bio</label>
+                <textarea class="form-textarea">Passionate backend systems engineer focused on high-concurrency microservices, Redis caching layer optimizations, and AI system infrastructure.</textarea>
+              </div>
+
+              <div class="grid-2">
+                <div class="form-group">
+                  <label class="form-label">University / Institution</label>
+                  <input type="text" class="form-input" value="Stanford University" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Internship Track</label>
+                  <input type="text" class="form-input" value="Full-Stack & Backend Engineering" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Submission Activity Streak Grid -->
+            <div class="glass-card" style="padding:1.75rem;">
+              <h3 style="font-size:1.15rem; margin-bottom:1rem; display:flex; justify-content:space-between;">
+                <span>Coding Submission Heatmap</span>
+                <span class="badge badge-warning">14-Day Streak Active 🔥</span>
+              </h3>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">248 commits & AI code audits completed in 2026.</p>
+              
+              <div style="display:grid; grid-template-columns:repeat(20, 1fr); gap:6px;">
+                <!-- 60 Sample Activity Blocks -->
+                <script>
+                  for (let i = 0; i < 60; i++) {
+                    const intensity = Math.random() > 0.4 ? (Math.random() > 0.5 ? 'rgba(34,197,94,0.8)' : 'rgba(37,99,235,0.6)') : 'rgba(255,255,255,0.05)';
+                    document.write(`<div style="height:18px; border-radius:3px; background:${intensity};"></div>`);
+                  }
+                </script>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Verified Skills & Certificates -->
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            
+            <!-- Skills Tag Cloud -->
+            <div class="glass-card" style="padding:1.5rem;">
+              <h4 style="font-size:1rem; margin-bottom:1rem;">Verified AI Skill Tags</h4>
+              <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+                <span class="badge badge-primary">Python 3.11</span>
+                <span class="badge badge-secondary">Redis Cluster</span>
+                <span class="badge badge-success">SQL Optimization</span>
+                <span class="badge badge-primary">FastAPI</span>
+                <span class="badge badge-secondary">Docker</span>
+                <span class="badge badge-muted">PostgreSQL</span>
+              </div>
+              <button class="btn btn-outline btn-sm btn-full" onclick="Toast.show({title:'Skill Added', message:'AI endorsed tag added to profile.', type:'info'});">+ Add Skill Tag</button>
+            </div>
+
+            <!-- Certificates Card -->
+            <div class="glass-card" style="padding:1.5rem;">
+              <h4 style="font-size:1rem; margin-bottom:1rem;">Earned Program Certificate</h4>
+              <div style="background:var(--bg-surface); padding:1rem; border-radius:var(--radius-md); border:1px solid var(--border-color); text-align:center;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2" style="margin:0 auto 0.5rem;"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                <div style="font-weight:700; font-size:0.9rem;">Backend Engineering Honors</div>
+                <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:0.75rem;">Issued by InternHub AI • Grade A+</div>
+                <button class="btn btn-secondary btn-sm btn-full" data-modal-target="certModal">Preview Certificate</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+
+      <footer class="app-footer">
+        <span>© 2026 InternHub AI Platform. All rights reserved.</span>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Verified Certificate Modal -->
+  <div class="modal-overlay" id="certModal">
+    <div class="modal-card" style="max-width:700px; text-align:center;">
+      <div class="modal-header">
+        <h3>Verified InternHub AI Certificate</h3>
+        <button class="btn btn-ghost btn-sm" data-modal-close>✕</button>
+      </div>
+      <div class="modal-body" style="padding:3rem 2rem; background:linear-gradient(135deg, rgba(30,41,59,0.95) 0%, rgba(15,23,42,0.95) 100%); border:2px solid var(--color-primary); border-radius:var(--radius-lg); margin:1rem;">
+        <div style="font-size:0.8rem; color:var(--color-secondary); font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem;">OFFICIAL CERTIFICATE OF COMPLETION</div>
+        <h2 style="font-size:2.2rem; font-weight:800; margin-bottom:1rem;" class="text-gradient">Sophia Chen</h2>
+        <p style="font-size:1rem; color:var(--text-secondary); max-width:500px; margin:0 auto 1.5rem;">
+          Has successfully completed the 12-week intensive <strong>Backend Engineering Internship Program</strong> with a cumulative AI Code Audit Score of <strong>94/100 (Grade A+)</strong>.
+        </p>
+        <div style="display:flex; justify-content:space-around; border-top:1px solid var(--border-color); padding-top:1.5rem;">
+          <div>
+            <div style="font-weight:700; font-size:0.9rem;">Dr. Sarah Jenkins</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Mentor Lead</div>
+          </div>
+          <div>
+            <div style="font-weight:700; font-size:0.9rem;">Verification ID</div>
+            <div style="font-size:0.75rem; color:var(--color-secondary);">IH-2026-994821</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline btn-sm" data-modal-close>Close</button>
+        <button class="btn btn-primary btn-sm" onclick="Toast.show({title:'Certificate Downloaded', message:'InternHub_Certificate_Sophia_Chen.pdf saved.', type:'success'});">Download PDF Certificate</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/mock-data.js"></script>
+  <script src="../assets/js/components/modal.js"></script>
+  <script src="../assets/js/components/toast.js"></script>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

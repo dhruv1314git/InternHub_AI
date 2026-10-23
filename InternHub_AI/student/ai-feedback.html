@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Code Feedback & Diagnostic Audit — InternHub AI</title>
+  
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../landing/index.html" class="brand-logo">
+          <div class="brand-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <span>InternHub <span class="text-gradient">AI</span></span>
+        </a>
+      </div>
+      <div class="sidebar-menu">
+        <a href="dashboard.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="task-details.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Current Tasks</span>
+        </a>
+        <a href="ai-feedback.html" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          <span>AI Feedback</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Profile & Badges</span>
+        </a>
+        <a href="settings.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Settings</span>
+        </a>
+      </div>
+      <div class="sidebar-footer">
+        <div class="user-profile-summary">
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250" alt="Sophia Chen" /></div>
+          <div class="user-info">
+            <span class="user-name">Sophia Chen</span>
+            <span class="user-role">Intern • Backend Track</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="page-title">AI Code Feedback & Diagnostic Audit</h1>
+        </div>
+        <div class="topbar-right">
+          <button class="btn btn-outline btn-sm" onclick="Toast.show({title:'PDF Report Generated', message:'Downloading InternHub_AI_Diagnostic_Report.pdf...', type:'info'});">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download PDF Audit Report
+          </button>
+          <a href="task-details.html" class="btn btn-primary btn-sm">Improve & Resubmit</a>
+        </div>
+      </header>
+
+      <main class="content-body">
+        
+        <!-- Audit Header Summary Card -->
+        <div class="glass-card" style="padding:2rem; margin-bottom:2rem;" class="animate-fade-in">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
+            <div style="display:flex; align-items:center; gap:2rem;">
+              <div id="feedbackGaugeChart"></div>
+              <div>
+                <span class="badge badge-success" style="margin-bottom:0.5rem;">Grade A Exceptional Code</span>
+                <h2 style="font-size:1.85rem; font-weight:800;">Redis Cache Engine Evaluation</h2>
+                <p style="color:var(--text-secondary); margin-top:0.25rem;">Evaluated against AST Security Standards & Performance Metrics • 92/100 Overall Score</p>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:0.75rem;">
+              <button class="btn btn-secondary btn-sm" onclick="Toast.show({title:'AI Re-Scan Triggered', message:'Re-evaluating AST code trees...', type:'info'});">Re-Run AI Scan</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sub-score Categories Grid -->
+        <div class="grid-4" style="margin-bottom:2rem;">
+          <div class="glass-card stat-card">
+            <span class="stat-title">Architecture & Design</span>
+            <div class="stat-value" style="color:#60A5FA;">95%</div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:95%;"></div></div>
+          </div>
+          <div class="glass-card stat-card">
+            <span class="stat-title">Security & Vulnerabilities</span>
+            <div class="stat-value" style="color:#F87171;">88%</div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:88%; background:#EF4444;"></div></div>
+          </div>
+          <div class="glass-card stat-card">
+            <span class="stat-title">Performance & Latency</span>
+            <div class="stat-value" style="color:#22D3EE;">94%</div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:94%;"></div></div>
+          </div>
+          <div class="glass-card stat-card">
+            <span class="stat-title">Test Suite Coverage</span>
+            <div class="stat-value" style="color:#4ADE80;">91%</div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:91%; background:#22C55E;"></div></div>
+          </div>
+        </div>
+
+        <div class="grid-main-side">
+          
+          <!-- Left Column: Code Diff Annotations & Strengths -->
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            
+            <!-- Code Diff Annotations -->
+            <div class="glass-card" style="padding:1.75rem;">
+              <h3 style="font-size:1.2rem; margin-bottom:1rem; display:flex; justify-content:space-between; align-items:center;">
+                <span>Line-by-Line AI Bug & Security Annotations</span>
+                <span class="badge badge-warning">2 Actionable Callouts</span>
+              </h3>
+
+              <div class="code-box" style="margin-bottom:1rem;">
+                <div class="code-header">
+                  <span>cache_manager.py — Security & Resource Leak Diagnostics</span>
+                  <span>Python 3.11</span>
+                </div>
+                <div class="code-content">
+                  <div class="diff-line">
+                    <span class="line-num">40</span>
+                    <span>def fallback_database_query(self, query_str: str):</span>
+                  </div>
+                  <div class="diff-line deletion">
+                    <span class="line-num">41</span>
+                    <span>-    # UNSECURE: Raw string concatenation risks SQL injection</span>
+                  </div>
+                  <div class="diff-line warning">
+                    <span class="line-num">42</span>
+                    <span>!    raw_sql = f"SELECT * FROM cache_store WHERE key = '{query_str}'" # ⚠️ AI Risk: SQL Injection</span>
+                  </div>
+                  <div class="diff-line addition">
+                    <span class="line-num">43</span>
+                    <span>+    # AI RECOMMENDATION: Use parameterized query binding</span>
+                  </div>
+                  <div class="diff-line addition">
+                    <span class="line-num">44</span>
+                    <span>+    cursor.execute("SELECT * FROM cache_store WHERE key = %s", (query_str,))</span>
+                  </div>
+                  <div class="diff-line">
+                    <span class="line-num">45</span>
+                    <span></span>
+                  </div>
+                  <div class="diff-line warning">
+                    <span class="line-num">88</span>
+                    <span>!    socket.connect((host, port)) # ⚠️ AI Warning: Unhandled socket connection timeout</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Strengths & Weaknesses Breakdown -->
+            <div class="grid-2">
+              <div class="glass-card" style="padding:1.5rem; border-top:3px solid var(--color-success);">
+                <h4 style="font-size:1rem; color:#4ADE80; margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  Architectural Strengths
+                </h4>
+                <ul style="padding-left:1.25rem; font-size:0.875rem; color:var(--text-secondary); display:flex; flex-direction:column; gap:0.5rem;">
+                  <li>Excellent implementation of thread-safe connection pooling for Redis sockets.</li>
+                  <li>Clean adherence to SOLID principles and modular abstraction layers.</li>
+                  <li>High test coverage (91%) across core operations.</li>
+                </ul>
+              </div>
+
+              <div class="glass-card" style="padding:1.5rem; border-top:3px solid var(--color-danger);">
+                <h4 style="font-size:1rem; color:#F87171; margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  Areas for Improvement
+                </h4>
+                <ul style="padding-left:1.25rem; font-size:0.875rem; color:var(--text-secondary); display:flex; flex-direction:column; gap:0.5rem;">
+                  <li>Unsafe raw string query builder in fallback logic (Line 42).</li>
+                  <li>Socket connection exceptions lack explicit cleanup inside catch blocks.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Sidebar: Learning Recommendations & Actions -->
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            
+            <div class="glass-card" style="padding:1.5rem;">
+              <h4 style="font-size:1rem; margin-bottom:1rem;">Recommended Learning Modules</h4>
+              <div style="display:flex; flex-direction:column; gap:0.75rem;">
+                <div style="background:var(--bg-surface); padding:0.875rem; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+                  <div style="font-weight:600; font-size:0.85rem; margin-bottom:0.25rem;">Parameterized SQL & Prevention</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted);">15 min interactive guide • OWASP Top 10</div>
+                </div>
+                <div style="background:var(--bg-surface); padding:0.875rem; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+                  <div style="font-weight:600; font-size:0.85rem; margin-bottom:0.25rem;">Python Socket Pool Resource Leaks</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted);">10 min deep dive • Advanced Async</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card" style="padding:1.5rem; text-align:center;">
+              <h4 style="font-size:1rem; margin-bottom:0.5rem;">Ready to improve your score?</h4>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">Apply recommended fixes in the live editor and resubmit for an instant 100/100 score.</p>
+              <a href="task-details.html" class="btn btn-primary btn-full">Apply Fixes in Code Editor</a>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+
+      <footer class="app-footer">
+        <span>© 2026 InternHub AI Platform. All rights reserved.</span>
+      </footer>
+    </div>
+  </div>
+
+  <script src="../assets/js/mock-data.js"></script>
+  <script src="../assets/js/components/modal.js"></script>
+  <script src="../assets/js/components/toast.js"></script>
+  <script src="../assets/js/components/chart.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Chart.renderDonutGauge('feedbackGaugeChart', 92);
+    });
+  </script>
+</body>
+</html>

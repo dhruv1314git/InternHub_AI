@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intern Directory & Management — InternHub AI</title>
+  
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../landing/index.html" class="brand-logo">
+          <div class="brand-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <span>InternHub <span class="text-gradient">AI</span></span>
+        </a>
+      </div>
+      <div class="sidebar-menu">
+        <a href="dashboard.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Executive Overview</span>
+        </a>
+        <a href="interns.html" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Intern Directory</span>
+        </a>
+        <a href="tasks.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>Task Management</span>
+        </a>
+        <a href="../student/settings.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Settings</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-summary">
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=250" alt="Dr. Sarah Jenkins" /></div>
+          <div class="user-info">
+            <span class="user-name">Dr. Sarah Jenkins</span>
+            <span class="user-role">Mentor Lead • Stripe</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="page-title">Intern Directory & Diagnostics</h1>
+        </div>
+        <div class="topbar-right">
+          <button class="btn btn-primary btn-sm" onclick="Toast.show({title:'Invite Sent', message:'Intern onboarding link generated & copied.', type:'success'});">+ Invite Intern</button>
+        </div>
+      </header>
+
+      <main class="content-body">
+        
+        <!-- Search, Filter & Controls Bar -->
+        <div class="glass-card" style="padding:1.25rem; margin-bottom:1.5rem; display:flex; gap:1rem; align-items:center; flex-wrap:wrap; justify-content:space-between;" class="animate-fade-in">
+          
+          <div class="search-box" style="max-width:320px;">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="directorySearchInput" class="search-input" placeholder="Search by name, email, or track..." oninput="filterInternsTable()" />
+          </div>
+
+          <div style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+            <select class="form-select" id="trackFilterSelect" onchange="filterInternsTable()" style="width:160px; padding:0.5rem 0.75rem; font-size:0.85rem;">
+              <option value="ALL">All Tracks</option>
+              <option value="Backend Engineering">Backend</option>
+              <option value="AI & ML Systems">AI & ML</option>
+              <option value="Frontend & Design">Frontend</option>
+              <option value="Cloud & DevOps">Cloud & DevOps</option>
+            </select>
+
+            <select class="form-select" id="riskFilterSelect" onchange="filterInternsTable()" style="width:140px; padding:0.5rem 0.75rem; font-size:0.85rem;">
+              <option value="ALL">All Risk Levels</option>
+              <option value="Low">Low Risk</option>
+              <option value="Medium">Medium Risk</option>
+              <option value="High">High Risk</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Interns Directory Table -->
+        <div class="table-container">
+          <table class="data-table" id="internsTable">
+            <thead>
+              <tr>
+                <th>Intern Name</th>
+                <th>Track</th>
+                <th>Status</th>
+                <th>Tasks Progress</th>
+                <th>AI Quality Score</th>
+                <th>Risk Level</th>
+                <th>Last Active</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="internsTableBody">
+              <!-- Dynamically Populated by JavaScript -->
+            </tbody>
+          </table>
+
+          <div class="pagination-wrapper">
+            <span>Showing 1-5 of 32 Interns</span>
+            <div class="pagination-controls">
+              <button class="page-btn">‹</button>
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn">3</button>
+              <button class="page-btn">›</button>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <footer class="app-footer">
+        <span>© 2026 InternHub AI Platform. All rights reserved.</span>
+      </footer>
+    </div>
+  </div>
+
+  <script src="../assets/js/mock-data.js"></script>
+  <script src="../assets/js/components/modal.js"></script>
+  <script src="../assets/js/components/toast.js"></script>
+  <script src="../assets/js/components/drawer.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderTable(window.InternHubData.interns);
+    });
+
+    function renderTable(data) {
+      const tbody = document.getElementById('internsTableBody');
+      if (!tbody) return;
+
+      tbody.innerHTML = data.map(intern => `
+        <tr onclick="Drawer.openStudentProfile('${intern.id}')" style="cursor:pointer;">
+          <td>
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <img src="${intern.avatar}" alt="${intern.name}" style="width:36px; height:36px; border-radius:50%; object-fit:cover;" />
+              <div>
+                <strong style="font-size:0.9rem;">${intern.name}</strong>
+                <div style="font-size:0.75rem; color:var(--text-muted);">${intern.email}</div>
+              </div>
+            </div>
+          </td>
+          <td><span class="badge badge-primary">${intern.track}</span></td>
+          <td>
+            <span class="badge ${intern.status === 'Active' ? 'badge-success' : 'badge-danger'}">${intern.status}</span>
+          </td>
+          <td style="font-weight:600;">${intern.completedTasks}/${intern.totalTasks}</td>
+          <td><span class="badge ${intern.aiScore >= 90 ? 'badge-success' : (intern.aiScore >= 75 ? 'badge-warning' : 'badge-danger')}">${intern.aiScore}/100</span></td>
+          <td><span class="badge ${intern.riskLevel === 'High' ? 'badge-danger' : (intern.riskLevel === 'Medium' ? 'badge-warning' : 'badge-muted')}">${intern.riskLevel}</span></td>
+          <td style="font-size:0.8rem; color:var(--text-muted);">${intern.lastActive}</td>
+          <td>
+            <button class="btn btn-outline btn-sm" onclick="event.stopPropagation(); Drawer.openStudentProfile('${intern.id}')">
+              Inspect Profile
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function filterInternsTable() {
+      const query = document.getElementById('directorySearchInput').value.toLowerCase();
+      const track = document.getElementById('trackFilterSelect').value;
+      const risk = document.getElementById('riskFilterSelect').value;
+
+      const filtered = window.InternHubData.interns.filter(intern => {
+        const matchesQuery = intern.name.toLowerCase().includes(query) || intern.email.toLowerCase().includes(query) || intern.track.toLowerCase().includes(query);
+        const matchesTrack = track === 'ALL' || intern.track === track;
+        const matchesRisk = risk === 'ALL' || intern.riskLevel === risk;
+        return matchesQuery && matchesTrack && matchesRisk;
+      });
+
+      renderTable(filtered);
+    }
+  </script>
+</body>
+</html>

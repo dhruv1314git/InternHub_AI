@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Details — Build High-Throughput Redis Cache Engine</title>
+  
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../landing/index.html" class="brand-logo">
+          <div class="brand-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <span>InternHub <span class="text-gradient">AI</span></span>
+        </a>
+      </div>
+      <div class="sidebar-menu">
+        <a href="dashboard.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="task-details.html" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Current Tasks</span>
+        </a>
+        <a href="ai-feedback.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          <span>AI Feedback</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Profile & Badges</span>
+        </a>
+        <a href="settings.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Settings</span>
+        </a>
+      </div>
+      <div class="sidebar-footer">
+        <div class="user-profile-summary">
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250" alt="Sophia Chen" /></div>
+          <div class="user-info">
+            <span class="user-name">Sophia Chen</span>
+            <span class="user-role">Intern • Backend Track</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      
+      <!-- Topbar Navbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="page-title">Task Details & Submitter</h1>
+        </div>
+        <div class="topbar-right">
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="Search tasks..." />
+          </div>
+          <a href="ai-feedback.html" class="btn btn-secondary btn-sm">View Last Audit Report</a>
+        </div>
+      </header>
+
+      <!-- Content Body -->
+      <main class="content-body">
+        
+        <!-- Task Header Banner -->
+        <div class="glass-card" style="padding:2rem; margin-bottom:2rem;" class="animate-fade-in">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <div style="display:flex; gap:0.5rem; margin-bottom:0.5rem;">
+                <span class="badge badge-primary">Backend Track</span>
+                <span class="badge badge-warning">Advanced Difficulty</span>
+                <span class="badge badge-danger">Due Today, 11:59 PM</span>
+              </div>
+              <h2 style="font-size:2rem; font-weight:800;">Build High-Throughput Redis Cache Engine</h2>
+            </div>
+            <div style="text-align:right;">
+              <span style="font-size:1.5rem; font-weight:800; color:var(--color-secondary);">+250 XP</span>
+              <div style="font-size:0.75rem; color:var(--text-muted);">Completion Reward</div>
+            </div>
+          </div>
+          <p style="font-size:1rem; color:var(--text-secondary); line-height:1.6;">
+            Design and engineer an in-memory caching engine utilizing Redis connection pooling, LRU cache eviction strategies, and fault-tolerant fallback queries under heavy concurrent load.
+          </p>
+        </div>
+
+        <div class="grid-main-side">
+          
+          <!-- Left Main Area: Specs & Code Submitter -->
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            
+            <!-- Requirements Card -->
+            <div class="glass-card" style="padding:1.75rem;">
+              <h3 style="font-size:1.2rem; margin-bottom:1rem;">Technical Specifications & Requirements</h3>
+              <ul style="padding-left:1.25rem; display:flex; flex-direction:column; gap:0.75rem; color:var(--text-secondary); font-size:0.925rem;">
+                <li>Implement <code>get</code>, <code>set</code>, <code>delete</code>, and <code>flush</code> operations with sub-millisecond O(1) latency.</li>
+                <li>Configure thread-safe Redis connection pool capping active socket clients at <strong>50 connections max</strong>.</li>
+                <li>Gracefully handle cache misses by triggering parameterized database fallback reads without blocking event loops.</li>
+                <li>Write comprehensive unit tests ensuring minimum <strong>90% code coverage</strong> across all modules.</li>
+              </ul>
+            </div>
+
+            <!-- Code Submission Panel (3 Tabs) -->
+            <div class="glass-card" style="padding:1.75rem;">
+              <h3 style="font-size:1.2rem; margin-bottom:1rem;">Submit Your Solution</h3>
+              
+              <div class="tabs-nav">
+                <button class="tab-btn active" id="tabSubmitEditor" onclick="switchSubmitTab('editor')">Live Code Editor</button>
+                <button class="tab-btn" id="tabSubmitGithub" onclick="switchSubmitTab('github')">GitHub Repository</button>
+                <button class="tab-btn" id="tabSubmitZip" onclick="switchSubmitTab('zip')">ZIP Archive Dropzone</button>
+              </div>
+
+              <!-- Tab 1: Live Code Editor -->
+              <div id="submitTabEditorContent">
+                <div id="codeEditorContainer"></div>
+              </div>
+
+              <!-- Tab 2: GitHub URL -->
+              <div id="submitTabGithubContent" class="hidden">
+                <div class="form-group">
+                  <label class="form-label">GitHub Repository URL</label>
+                  <input type="url" class="form-input" placeholder="https://github.com/username/redis-cache-engine" value="https://github.com/sophiachen/redis-cache-engine" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Branch Name</label>
+                  <input type="text" class="form-input" value="main" />
+                </div>
+                <button class="btn btn-primary" onclick="Toast.show({title:'Repo Link Submitted', message:'AI bot is cloning & evaluating your repository...', type:'success'});">Submit GitHub Repo</button>
+              </div>
+
+              <!-- Tab 3: ZIP Upload Dropzone -->
+              <div id="submitTabZipContent" class="hidden">
+                <div style="border:2px dashed var(--border-color-hover); border-radius:var(--radius-lg); padding:3rem 2rem; text-align:center; background:rgba(15,23,42,0.4); cursor:pointer;" onclick="Toast.show({title:'File Uploaded', message:'redis_cache_submission.zip attached successfully.', type:'info'});">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2" style="margin-bottom:0.75rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  <div style="font-weight:600; margin-bottom:0.25rem;">Click or drag & drop ZIP project file</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted);">Supports .zip, .tar.gz up to 50MB</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Discussion & Q&A Thread -->
+            <div class="glass-card" style="padding:1.75rem;">
+              <h3 style="font-size:1.2rem; margin-bottom:1.25rem;">Mentor & Peer Discussion Thread</h3>
+              
+              <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:1.5rem;">
+                <div style="display:flex; gap:0.875rem; background:var(--bg-surface); padding:1rem; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150" style="width:36px; height:36px; border-radius:50%; object-fit:cover;" />
+                  <div>
+                    <div style="display:flex; gap:0.5rem; align-items:center; margin-bottom:0.25rem;">
+                      <strong style="font-size:0.875rem;">Dr. Sarah Jenkins (Mentor)</strong>
+                      <span class="badge badge-primary" style="font-size:0.65rem;">Staff Engineer</span>
+                      <span style="font-size:0.75rem; color:var(--text-muted);">2 hours ago</span>
+                    </div>
+                    <p style="font-size:0.85rem; color:var(--text-secondary);">Tip for Task #12: Make sure to wrap socket creation in try/finally blocks to prevent unclosed connection leaks during Redis failover testing!</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom:0.75rem;">
+                <textarea class="form-textarea" placeholder="Ask a question or share a thought with your mentor..."></textarea>
+              </div>
+              <button class="btn btn-outline btn-sm" onclick="Toast.show({title:'Comment Posted', message:'Your message was added to the task thread.', type:'success'});">Post Comment</button>
+            </div>
+
+          </div>
+
+          <!-- Right Sidebar: Resources & AI Suggestions -->
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            
+            <!-- Downloadable Resources -->
+            <div class="glass-card" style="padding:1.5rem;">
+              <h4 style="font-size:1rem; margin-bottom:1rem;">Starter Attachments & Specs</h4>
+              <div style="display:flex; flex-direction:column; gap:0.75rem;">
+                <a href="#" class="btn btn-outline btn-sm" style="justify-content:flex-start; gap:0.75rem;" onclick="Toast.show({title:'Downloading Starter Repo', message:'redis_starter_template.zip downloading...', type:'info'}); return false;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  <span>redis_starter_template.zip</span>
+                </a>
+                <a href="#" class="btn btn-outline btn-sm" style="justify-content:flex-start; gap:0.75rem;" onclick="Toast.show({title:'Opening API Specs', message:'Redirecting to OpenAPI documentation...', type:'info'}); return false;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  <span>OpenAPI Spec & Contract.pdf</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- AI Mentor Suggestions -->
+            <div class="glass-card" style="padding:1.5rem; border-left:3px solid var(--color-secondary);">
+              <h4 style="font-size:1rem; margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                AI Co-Mentor Smart Hints
+              </h4>
+              <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">
+                Remember to specify <code>socket_timeout=2.0</code> on connection initialization so blocking calls release thread control quickly.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+
+      <footer class="app-footer">
+        <span>© 2026 InternHub AI Platform. All rights reserved.</span>
+      </footer>
+    </div>
+  </div>
+
+  <script src="../assets/js/mock-data.js"></script>
+  <script src="../assets/js/components/modal.js"></script>
+  <script src="../assets/js/components/toast.js"></script>
+  <script src="../assets/js/components/code-editor.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      CodeEditor.init('codeEditorContainer');
+    });
+
+    function switchSubmitTab(tab) {
+      document.querySelectorAll('.tabs-nav .tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('submitTabEditorContent').classList.add('hidden');
+      document.getElementById('submitTabGithubContent').classList.add('hidden');
+      document.getElementById('submitTabZipContent').classList.add('hidden');
+
+      if (tab === 'editor') {
+        document.getElementById('tabSubmitEditor').classList.add('active');
+        document.getElementById('submitTabEditorContent').classList.remove('hidden');
+      } else if (tab === 'github') {
+        document.getElementById('tabSubmitGithub').classList.add('active');
+        document.getElementById('submitTabGithubContent').classList.remove('hidden');
+      } else {
+        document.getElementById('tabSubmitZip').classList.add('active');
+        document.getElementById('submitTabZipContent').classList.remove('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

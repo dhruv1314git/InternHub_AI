@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task & Assignment Management — InternHub AI</title>
+  
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../landing/index.html" class="brand-logo">
+          <div class="brand-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <span>InternHub <span class="text-gradient">AI</span></span>
+        </a>
+      </div>
+      <div class="sidebar-menu">
+        <a href="dashboard.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Executive Overview</span>
+        </a>
+        <a href="interns.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Intern Directory</span>
+        </a>
+        <a href="tasks.html" class="nav-item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>Task Management</span>
+        </a>
+        <a href="../student/settings.html" class="nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Settings</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-summary">
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=250" alt="Dr. Sarah Jenkins" /></div>
+          <div class="user-info">
+            <span class="user-name">Dr. Sarah Jenkins</span>
+            <span class="user-role">Mentor Lead • Stripe</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="page-title">Task & Assignment Management</h1>
+        </div>
+        <div class="topbar-right">
+          <button class="btn btn-primary btn-sm" data-modal-target="createTaskModal">+ Create New Task</button>
+        </div>
+      </header>
+
+      <main class="content-body">
+        
+        <!-- View Mode Switcher Header -->
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;" class="animate-fade-in">
+          <div class="tabs-nav" style="margin-bottom:0; border-bottom:none;">
+            <button class="tab-btn active" id="viewGridBtn" onclick="switchTaskView('grid')">Task List Grid</button>
+            <button class="tab-btn" id="viewCalendarBtn" onclick="switchTaskView('calendar')">Deadline Calendar View</button>
+          </div>
+          <span style="font-size:0.85rem; color:var(--text-muted);">15 Tasks Published Across 4 Tracks</span>
+        </div>
+
+        <!-- View 1: Task Grid -->
+        <div id="taskGridView" class="grid-3">
+          
+          <div class="glass-card" style="padding:1.5rem; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:0.75rem;">
+                <span class="badge badge-primary">Backend Track</span>
+                <span class="badge badge-warning">Due Today</span>
+              </div>
+              <h3 style="font-size:1.15rem; margin-bottom:0.5rem;">Build High-Throughput Redis Cache Engine</h3>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">In-memory cache module with LRU eviction and connection pooling.</p>
+              <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:1rem;">
+                Submissions: <strong style="color:var(--text-primary);">28 / 32 Interns</strong> (87%)
+              </div>
+            </div>
+            <div style="display:flex; gap:0.5rem; border-top:1px solid var(--border-color); padding-top:1rem;">
+              <a href="../student/task-details.html" class="btn btn-outline btn-sm btn-full">Preview Spec</a>
+              <button class="btn btn-ghost btn-sm" onclick="Toast.show({title:'Task Cloned', message:'Duplicate draft created.', type:'info'});">Clone</button>
+            </div>
+          </div>
+
+          <div class="glass-card" style="padding:1.5rem; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:0.75rem;">
+                <span class="badge badge-secondary">AI & ML Track</span>
+                <span class="badge badge-success">Aug 14, 2026</span>
+              </div>
+              <h3 style="font-size:1.15rem; margin-bottom:0.5rem;">Vector Search Pipeline for Embeddings</h3>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">Pinecone embedding indexer for sub-10ms similarity lookup.</p>
+              <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:1rem;">
+                Submissions: <strong style="color:var(--text-primary);">12 / 32 Interns</strong> (37%)
+              </div>
+            </div>
+            <div style="display:flex; gap:0.5rem; border-top:1px solid var(--border-color); padding-top:1rem;">
+              <a href="../student/task-details.html" class="btn btn-outline btn-sm btn-full">Preview Spec</a>
+              <button class="btn btn-ghost btn-sm" onclick="Toast.show({title:'Task Cloned', message:'Duplicate draft created.', type:'info'});">Clone</button>
+            </div>
+          </div>
+
+          <div class="glass-card" style="padding:1.5rem; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:0.75rem;">
+                <span class="badge badge-muted">Frontend Track</span>
+                <span class="badge badge-success">Aug 18, 2026</span>
+              </div>
+              <h3 style="font-size:1.15rem; margin-bottom:0.5rem;">Design System Token Integration</h3>
+              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">Create CSS custom property variables and glassmorphism cards.</p>
+              <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:1rem;">
+                Submissions: <strong style="color:var(--text-primary);">0 / 32 Interns</strong> (0%)
+              </div>
+            </div>
+            <div style="display:flex; gap:0.5rem; border-top:1px solid var(--border-color); padding-top:1rem;">
+              <a href="../student/task-details.html" class="btn btn-outline btn-sm btn-full">Preview Spec</a>
+              <button class="btn btn-ghost btn-sm" onclick="Toast.show({title:'Task Cloned', message:'Duplicate draft created.', type:'info'});">Clone</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- View 2: Calendar View -->
+        <div id="taskCalendarView" class="glass-card hidden" style="padding:2rem;">
+          <h3 style="font-size:1.2rem; margin-bottom:1.5rem; text-align:center;">August 2026 Task Deadline Schedule</h3>
+          <div style="display:grid; grid-template-columns:repeat(7, 1fr); gap:0.5rem; text-align:center; font-weight:600; font-size:0.85rem; margin-bottom:0.5rem; color:var(--text-muted);">
+            <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(7, 1fr); gap:0.5rem;">
+            <!-- Calendar Days Mockup -->
+            <div style="background:var(--bg-surface); padding:1rem; border-radius:var(--radius-sm); min-height:80px; font-size:0.8rem; color:var(--text-muted);">1</div>
+            <div style="background:var(--bg-surface); padding:1rem; border-radius:var(--radius-sm); min-height:80px; font-size:0.8rem; color:var(--text-muted);">2</div>
+            <div style="background:var(--bg-surface); padding:1rem; border-radius:var(--radius-sm); min-height:80px; font-size:0.8rem; color:var(--text-muted);">3</div>
+            <div style="background:var(--bg-surface); padding:1rem; border-radius:var(--radius-sm); min-height:80px; font-size:0.8rem; color:var(--text-muted);">4</div>
+            <div style="background:var(--bg-surface); padding:1rem; border-radius:var(--radius-sm); min-height:80px; font-size:0.8rem; color:var(--text-muted);">5</div>
+            <div style="background:var(--bg-surface); padding:1rem; border-radius:var(--radius-sm); min-height:80px; font-size:0.8rem; color:var(--text-muted);">6</div>
+            <div style="background:rgba(37,99,235,0.2); border:1px solid var(--color-primary); padding:0.5rem; border-radius:var(--radius-sm); min-height:80px; font-size:0.8rem; color:#FFF;">
+              <strong>7</strong>
+              <div style="background:var(--color-primary); font-size:0.65rem; padding:0.125rem 0.25rem; border-radius:3px; margin-top:0.25rem;">Redis Cache Engine</div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <footer class="app-footer">
+        <span>© 2026 InternHub AI Platform. All rights reserved.</span>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Create Task Modal -->
+  <div class="modal-overlay" id="createTaskModal">
+    <div class="modal-card" style="max-width:650px;">
+      <div class="modal-header">
+        <h3>Create New Assignment</h3>
+        <button class="btn btn-ghost btn-sm" data-modal-close>✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Assignment Title</label>
+          <input type="text" class="form-input" placeholder="e.g. Implement Distributed Lock Manager" />
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="form-group">
+            <label class="form-label">Track</label>
+            <select class="form-select">
+              <option>Backend Engineering</option>
+              <option>AI & ML Systems</option>
+              <option>Frontend & Design</option>
+              <option>Cloud & DevOps</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Due Date</label>
+            <input type="date" class="form-input" value="2026-08-20" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Detailed Requirements & Instructions</label>
+          <textarea class="form-textarea" placeholder="List technical specifications and target evaluation criteria..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline btn-sm" data-modal-close>Cancel</button>
+        <button class="btn btn-primary btn-sm" onclick="Toast.show({title:'Task Published', message:'New assignment broadcasted to cohort.', type:'success'}); Modal.closeAll();">Publish to Cohort</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/mock-data.js"></script>
+  <script src="../assets/js/components/modal.js"></script>
+  <script src="../assets/js/components/toast.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    function switchTaskView(mode) {
+      if (mode === 'grid') {
+        document.getElementById('viewGridBtn').classList.add('active');
+        document.getElementById('viewCalendarBtn').classList.remove('active');
+        document.getElementById('taskGridView').classList.remove('hidden');
+        document.getElementById('taskCalendarView').classList.add('hidden');
+      } else {
+        document.getElementById('viewCalendarBtn').classList.add('active');
+        document.getElementById('viewGridBtn').classList.remove('active');
+        document.getElementById('taskCalendarView').classList.remove('hidden');
+        document.getElementById('taskGridView').classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
